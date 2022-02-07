@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:firebase_auth_oauth/firebase_auth_oauth.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -67,110 +66,6 @@ class LoginCubit extends Cubit<LoginState> {
     try {
       emit(state.copyWith(status: FormzStatus.submissionInProgress));
       _auth.signInWithCredential(credential);
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on FirebaseAuthException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } on PlatformException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } catch (error) {
-      emit(state.copyWith(
-          exceptionError: "Unexpected error please try again later",
-          status: FormzStatus.submissionFailure));
-    }
-  }
-
-  Future<void> performLogin(
-      {required String provider,
-      required scopes,
-      Map<String, String>? parameters}) async {
-    await FirebaseAuthOAuth()
-        .openSignInFlow(provider, scopes, parameters)
-        .then((value) => value);
-  }
-
-  void signInWithGithub() async {
-    try {
-      emit(state.copyWith(status: FormzStatus.submissionInProgress));
-
-      await performLogin(
-          provider: 'github.com',
-          scopes: ['user:email'],
-          parameters: {'lang': 'en'});
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on FirebaseAuthException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } on PlatformException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } catch (error) {
-      emit(state.copyWith(
-          exceptionError: "Unexpected error please try again later",
-          status: FormzStatus.submissionFailure));
-    }
-  }
-
-  void signInWithTwitter() async {
-    try {
-      emit(state.copyWith(status: FormzStatus.submissionInProgress));
-      await performLogin(
-          provider: 'twitter.com',
-          scopes: ['user:email'],
-          parameters: {'lang': 'en'});
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on FirebaseAuthException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } on PlatformException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } catch (error) {
-      emit(state.copyWith(
-          exceptionError: "Unexpected error please try again later",
-          status: FormzStatus.submissionFailure));
-    }
-  }
-
-  void signInWithApple() async {
-    try {
-      emit(state.copyWith(status: FormzStatus.submissionInProgress));
-
-      await performLogin(
-          provider: 'apple.com',
-          scopes: ['user:email'],
-          parameters: {'lang': 'en'});
-
-      emit(state.copyWith(status: FormzStatus.submissionSuccess));
-    } on FirebaseAuthException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } on PlatformException catch (error) {
-      emit(state.copyWith(
-          exceptionError: error.message.toString(),
-          status: FormzStatus.submissionFailure));
-    } catch (error) {
-      emit(state.copyWith(
-          exceptionError: "Unexpected error please try again later",
-          status: FormzStatus.submissionFailure));
-    }
-  }
-
-  void signInWithMicrosoft() async {
-    try {
-      emit(state.copyWith(status: FormzStatus.submissionInProgress));
-      await performLogin(
-          provider: 'microsoft.com',
-          scopes: ['user:email'],
-          parameters: {'lang': 'en'});
       emit(state.copyWith(status: FormzStatus.submissionSuccess));
     } on FirebaseAuthException catch (error) {
       emit(state.copyWith(

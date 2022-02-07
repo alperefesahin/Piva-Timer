@@ -133,54 +133,6 @@ Widget SignInWithGoogle() {
   );
 }
 
-Widget SignInWithGithub() {
-  return BlocBuilder<LoginCubit, LoginState>(
-    buildWhen: (previous, current) => previous.status != current.status,
-    builder: (context, state) {
-      return Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SignInButton(Buttons.GitHub,
-              onPressed: () => context.read<LoginCubit>().signInWithGithub()));
-    },
-  );
-}
-
-Widget SignInWithTwitter() {
-  return BlocBuilder<LoginCubit, LoginState>(
-    buildWhen: (previous, current) => previous.status != current.status,
-    builder: (context, state) {
-      return Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SignInButton(Buttons.Twitter,
-              onPressed: () => context.read<LoginCubit>().signInWithTwitter()));
-    },
-  );
-}
-
-Widget SignInWithApple() {
-  return BlocBuilder<LoginCubit, LoginState>(
-    buildWhen: (previous, current) => previous.status != current.status,
-    builder: (context, state) {
-      return Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SignInButton(Buttons.Apple,
-              onPressed: () => context.read<LoginCubit>().signInWithApple()));
-    },
-  );
-}
-
-Widget SignInWithMicrosoft() {
-  return BlocBuilder<LoginCubit, LoginState>(
-    buildWhen: (previous, current) => previous.status != current.status,
-    builder: (context, state) {
-      return Padding(
-          padding: const EdgeInsets.only(top: 20),
-          child: SignInButton(Buttons.Microsoft,
-              onPressed: () =>
-                  context.read<LoginCubit>().signInWithMicrosoft()));
-    },
-  );
-}
 
 SnackBar SnackBarWhenSuccess() {
   return const SnackBar(

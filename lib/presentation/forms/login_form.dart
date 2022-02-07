@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -45,10 +44,6 @@ class LoginForm extends StatelessWidget {
                             children: [
                               SeperatedText(),
                               SignInWithGoogle(),
-                              SignInWithGithub(),
-                              SignInWithTwitter(),
-                              SignInWithApple(),
-                              SignInWithMicrosoft(),
                             ],
                           )
                         ],
