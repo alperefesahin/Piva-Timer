@@ -4,9 +4,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_signin_button/flutter_signin_button.dart';
 import 'package:piva/application/cubit/login/login_cubit.dart';
 import 'package:piva/domain/auth_models/auth_text_field.dart';
-import 'package:piva/presentation/pages/sign_up_page.dart';
 import 'package:piva/domain/auth_models/password.dart';
 import 'package:piva/domain/auth_models/email.dart';
+import 'package:piva/presentation/pages/login_pages/sign_up_page.dart';
 
 Widget LoginText() {
   return const Padding(
@@ -132,7 +132,6 @@ Widget SignInWithGoogle() {
     },
   );
 }
-
 
 SnackBar SnackBarWhenSuccess() {
   return const SnackBar(

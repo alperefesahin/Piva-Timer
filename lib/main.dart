@@ -1,8 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:piva/application/cubit/auth/auth_cubit.dart';
-import 'package:piva/presentation/pages/landing_page.dart';
+
+import 'package:piva/presentation/pages/timer_page/timer_page.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,12 +14,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        title: 'Piva',
-        home: BlocProvider(
-          lazy: false,
-          create: (_) => AuthCubit(),
-          child: const LandingPage(),
-        ));
+    return const MaterialApp(
+        debugShowCheckedModeBanner: false, title: 'Piva', home: TimerPage());
   }
 }

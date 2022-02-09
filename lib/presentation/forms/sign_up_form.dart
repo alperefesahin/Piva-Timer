@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 import 'package:piva/application/cubit/sign_up/sign_up_cubit.dart';
-import 'package:piva/presentation/widgets/sign_up_page_widgets.dart';
+import 'package:piva/presentation/widgets/login_pages_widgets/sign_up_page_widgets.dart';
 
 class SignUpForm extends StatelessWidget {
   const SignUpForm({Key? key}) : super(key: key);
