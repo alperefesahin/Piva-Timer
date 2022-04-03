@@ -18,11 +18,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$OfflineTimerStateTearOff {
   const _$OfflineTimerStateTearOff();
 
-  _Initial initial({bool isStop = true, int hours = 00, int minutes = 00}) {
+  _Initial initial(
+      {bool isStop = true,
+      int minuteOfNumberPicker = 1,
+      int hourOfNumberPicker = 0,
+      Duration timerDuration = const Duration(minutes: 15)}) {
     return _Initial(
       isStop: isStop,
-      hours: hours,
-      minutes: minutes,
+      minuteOfNumberPicker: minuteOfNumberPicker,
+      hourOfNumberPicker: hourOfNumberPicker,
+      timerDuration: timerDuration,
     );
   }
 }
@@ -33,22 +38,29 @@ const $OfflineTimerState = _$OfflineTimerStateTearOff();
 /// @nodoc
 mixin _$OfflineTimerState {
   bool get isStop => throw _privateConstructorUsedError;
-  int get hours => throw _privateConstructorUsedError;
-  int get minutes => throw _privateConstructorUsedError;
+  int get minuteOfNumberPicker => throw _privateConstructorUsedError;
+  int get hourOfNumberPicker => throw _privateConstructorUsedError;
+  Duration get timerDuration => throw _privateConstructorUsedError;
 
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isStop, int hours, int minutes) initial,
+    required TResult Function(bool isStop, int minuteOfNumberPicker,
+            int hourOfNumberPicker, Duration timerDuration)
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isStop, int hours, int minutes)? initial,
+    TResult Function(bool isStop, int minuteOfNumberPicker,
+            int hourOfNumberPicker, Duration timerDuration)?
+        initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isStop, int hours, int minutes)? initial,
+    TResult Function(bool isStop, int minuteOfNumberPicker,
+            int hourOfNumberPicker, Duration timerDuration)?
+        initial,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -79,7 +91,11 @@ abstract class $OfflineTimerStateCopyWith<$Res> {
   factory $OfflineTimerStateCopyWith(
           OfflineTimerState value, $Res Function(OfflineTimerState) then) =
       _$OfflineTimerStateCopyWithImpl<$Res>;
-  $Res call({bool isStop, int hours, int minutes});
+  $Res call(
+      {bool isStop,
+      int minuteOfNumberPicker,
+      int hourOfNumberPicker,
+      Duration timerDuration});
 }
 
 /// @nodoc
@@ -94,22 +110,27 @@ class _$OfflineTimerStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isStop = freezed,
-    Object? hours = freezed,
-    Object? minutes = freezed,
+    Object? minuteOfNumberPicker = freezed,
+    Object? hourOfNumberPicker = freezed,
+    Object? timerDuration = freezed,
   }) {
     return _then(_value.copyWith(
       isStop: isStop == freezed
           ? _value.isStop
           : isStop // ignore: cast_nullable_to_non_nullable
               as bool,
-      hours: hours == freezed
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
+      minuteOfNumberPicker: minuteOfNumberPicker == freezed
+          ? _value.minuteOfNumberPicker
+          : minuteOfNumberPicker // ignore: cast_nullable_to_non_nullable
               as int,
-      minutes: minutes == freezed
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
+      hourOfNumberPicker: hourOfNumberPicker == freezed
+          ? _value.hourOfNumberPicker
+          : hourOfNumberPicker // ignore: cast_nullable_to_non_nullable
               as int,
+      timerDuration: timerDuration == freezed
+          ? _value.timerDuration
+          : timerDuration // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
@@ -120,7 +141,11 @@ abstract class _$InitialCopyWith<$Res>
   factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
       __$InitialCopyWithImpl<$Res>;
   @override
-  $Res call({bool isStop, int hours, int minutes});
+  $Res call(
+      {bool isStop,
+      int minuteOfNumberPicker,
+      int hourOfNumberPicker,
+      Duration timerDuration});
 }
 
 /// @nodoc
@@ -135,22 +160,27 @@ class __$InitialCopyWithImpl<$Res> extends _$OfflineTimerStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? isStop = freezed,
-    Object? hours = freezed,
-    Object? minutes = freezed,
+    Object? minuteOfNumberPicker = freezed,
+    Object? hourOfNumberPicker = freezed,
+    Object? timerDuration = freezed,
   }) {
     return _then(_Initial(
       isStop: isStop == freezed
           ? _value.isStop
           : isStop // ignore: cast_nullable_to_non_nullable
               as bool,
-      hours: hours == freezed
-          ? _value.hours
-          : hours // ignore: cast_nullable_to_non_nullable
+      minuteOfNumberPicker: minuteOfNumberPicker == freezed
+          ? _value.minuteOfNumberPicker
+          : minuteOfNumberPicker // ignore: cast_nullable_to_non_nullable
               as int,
-      minutes: minutes == freezed
-          ? _value.minutes
-          : minutes // ignore: cast_nullable_to_non_nullable
+      hourOfNumberPicker: hourOfNumberPicker == freezed
+          ? _value.hourOfNumberPicker
+          : hourOfNumberPicker // ignore: cast_nullable_to_non_nullable
               as int,
+      timerDuration: timerDuration == freezed
+          ? _value.timerDuration
+          : timerDuration // ignore: cast_nullable_to_non_nullable
+              as Duration,
     ));
   }
 }
@@ -158,7 +188,11 @@ class __$InitialCopyWithImpl<$Res> extends _$OfflineTimerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_Initial extends _Initial {
-  const _$_Initial({this.isStop = true, this.hours = 00, this.minutes = 00})
+  const _$_Initial(
+      {this.isStop = true,
+      this.minuteOfNumberPicker = 1,
+      this.hourOfNumberPicker = 0,
+      this.timerDuration = const Duration(minutes: 15)})
       : super._();
 
   @JsonKey()
@@ -166,14 +200,17 @@ class _$_Initial extends _Initial {
   final bool isStop;
   @JsonKey()
   @override
-  final int hours;
+  final int minuteOfNumberPicker;
   @JsonKey()
   @override
-  final int minutes;
+  final int hourOfNumberPicker;
+  @JsonKey()
+  @override
+  final Duration timerDuration;
 
   @override
   String toString() {
-    return 'OfflineTimerState.initial(isStop: $isStop, hours: $hours, minutes: $minutes)';
+    return 'OfflineTimerState.initial(isStop: $isStop, minuteOfNumberPicker: $minuteOfNumberPicker, hourOfNumberPicker: $hourOfNumberPicker, timerDuration: $timerDuration)';
   }
 
   @override
@@ -182,16 +219,21 @@ class _$_Initial extends _Initial {
         (other.runtimeType == runtimeType &&
             other is _Initial &&
             const DeepCollectionEquality().equals(other.isStop, isStop) &&
-            const DeepCollectionEquality().equals(other.hours, hours) &&
-            const DeepCollectionEquality().equals(other.minutes, minutes));
+            const DeepCollectionEquality()
+                .equals(other.minuteOfNumberPicker, minuteOfNumberPicker) &&
+            const DeepCollectionEquality()
+                .equals(other.hourOfNumberPicker, hourOfNumberPicker) &&
+            const DeepCollectionEquality()
+                .equals(other.timerDuration, timerDuration));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(isStop),
-      const DeepCollectionEquality().hash(hours),
-      const DeepCollectionEquality().hash(minutes));
+      const DeepCollectionEquality().hash(minuteOfNumberPicker),
+      const DeepCollectionEquality().hash(hourOfNumberPicker),
+      const DeepCollectionEquality().hash(timerDuration));
 
   @JsonKey(ignore: true)
   @override
@@ -201,27 +243,36 @@ class _$_Initial extends _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function(bool isStop, int hours, int minutes) initial,
+    required TResult Function(bool isStop, int minuteOfNumberPicker,
+            int hourOfNumberPicker, Duration timerDuration)
+        initial,
   }) {
-    return initial(isStop, hours, minutes);
+    return initial(
+        isStop, minuteOfNumberPicker, hourOfNumberPicker, timerDuration);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
-    TResult Function(bool isStop, int hours, int minutes)? initial,
+    TResult Function(bool isStop, int minuteOfNumberPicker,
+            int hourOfNumberPicker, Duration timerDuration)?
+        initial,
   }) {
-    return initial?.call(isStop, hours, minutes);
+    return initial?.call(
+        isStop, minuteOfNumberPicker, hourOfNumberPicker, timerDuration);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function(bool isStop, int hours, int minutes)? initial,
+    TResult Function(bool isStop, int minuteOfNumberPicker,
+            int hourOfNumberPicker, Duration timerDuration)?
+        initial,
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(isStop, hours, minutes);
+      return initial(
+          isStop, minuteOfNumberPicker, hourOfNumberPicker, timerDuration);
     }
     return orElse();
   }
@@ -256,15 +307,21 @@ class _$_Initial extends _Initial {
 }
 
 abstract class _Initial extends OfflineTimerState {
-  const factory _Initial({bool isStop, int hours, int minutes}) = _$_Initial;
+  const factory _Initial(
+      {bool isStop,
+      int minuteOfNumberPicker,
+      int hourOfNumberPicker,
+      Duration timerDuration}) = _$_Initial;
   const _Initial._() : super._();
 
   @override
   bool get isStop;
   @override
-  int get hours;
+  int get minuteOfNumberPicker;
   @override
-  int get minutes;
+  int get hourOfNumberPicker;
+  @override
+  Duration get timerDuration;
   @override
   @JsonKey(ignore: true)
   _$InitialCopyWith<_Initial> get copyWith =>

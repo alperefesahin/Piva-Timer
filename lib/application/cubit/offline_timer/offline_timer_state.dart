@@ -6,9 +6,10 @@ class OfflineTimerState with _$OfflineTimerState {
 
   const factory OfflineTimerState.initial({
     @Default(true) bool isStop,
-    @Default(00) int hours,
-    @Default(00) int minutes,
+    @Default(1) int minuteOfNumberPicker,
+    @Default(0) int hourOfNumberPicker,
+    @Default(Duration(minutes: 15)) Duration timerDuration,
   }) = _Initial;
 
-  bool get timeIsUp => (hours == 00 && minutes == 00);
+/*   bool get timeIsUp => (hours == 00 && minutes == 00); */
 }

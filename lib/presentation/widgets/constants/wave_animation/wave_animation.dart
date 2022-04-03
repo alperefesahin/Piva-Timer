@@ -1,4 +1,4 @@
-import 'dart:math' as Math;
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 
@@ -28,19 +28,18 @@ class _WaveWidgetState extends State<WaveWidget> with TickerProviderStateMixin {
   void initState() {
     super.initState();
 
-    animationController = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 5000))
+    animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 5000))
       ..addListener(() {
         wavePoints.clear();
 
         final double waveSpeed = animationController.value * 1080;
-        final double fullSphere = animationController.value * Math.pi * 2;
-        final double normalizer = Math.cos(fullSphere);
-        final double waveWidth = Math.pi / 270;
+        final double fullSphere = animationController.value * pi * 2;
+        final double normalizer = cos(fullSphere);
+        const double waveWidth = pi / 270;
         const double waveHeight = 20.0;
 
         for (int i = 0; i <= widget.size.width.toInt(); ++i) {
-          double calc = Math.sin((waveSpeed - i) * waveWidth);
+          double calc = sin((waveSpeed - i) * waveWidth);
           wavePoints.add(
             Offset(
               i.toDouble(), //X
