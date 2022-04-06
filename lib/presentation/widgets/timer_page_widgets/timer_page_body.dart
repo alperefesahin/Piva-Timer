@@ -15,15 +15,9 @@ class TimerPageBody extends StatelessWidget {
   }) : super(key: key);
   final TimerController timerController;
   final OfflineTimerState state;
-/* 
-  format(Duration d) => d.toString().split('.').first.padLeft(8, "0"); */
 
   @override
   Widget build(BuildContext context) {
-    print("minute" + state.minuteOfNumberPicker.toString());
-    print("hour" + state.hourOfNumberPicker.toString());
-    print("timer duration" + state.timerDuration.toString());
-
     final size = MediaQuery.of(context).size;
     final bool keyboardOpen = MediaQuery.of(context).viewInsets.bottom > 0;
 
@@ -36,6 +30,7 @@ class TimerPageBody extends StatelessWidget {
           height: 200,
           width: 200,
           child: SimpleTimer(
+              progressIndicatorColor: Colors.transparent,
               controller: timerController,
               progressTextFormatter: (Duration d) =>
                   "${d.inHours % 60}:${d.inMinutes % 60}:${(d.inSeconds % 60).toString().padLeft(2, "0")}",
@@ -97,9 +92,9 @@ class TimerPageBody extends StatelessWidget {
             child: Stack(
           children: [
             TimerPageBodyWaveAnimation(
+              state: state,
               size: size,
               keyboardOpen: keyboardOpen,
-              value: 13,
             ),
             state.isStop
                 ? Padding(
@@ -108,7 +103,11 @@ class TimerPageBody extends StatelessWidget {
                         child: RoundedButton(
                             text: "Start",
                             onTap: () {
-                              context.read<OfflineTimerCubit>().startTimer();
+                              if (state.timerDuration != Duration.zero) {
+                                context.read<OfflineTimerCubit>().startTimer();
+                              } else if (state.timerIsZero) {
+                                timerIsZeroError(context);
+                              }
                             })))
                 : Padding(
                     padding: const EdgeInsets.only(top: 50),

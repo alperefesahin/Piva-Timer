@@ -20,7 +20,7 @@ class _$OfflineTimerStateTearOff {
 
   _Initial initial(
       {bool isStop = true,
-      int minuteOfNumberPicker = 1,
+      int minuteOfNumberPicker = 15,
       int hourOfNumberPicker = 0,
       Duration timerDuration = const Duration(minutes: 15)}) {
     return _Initial(
@@ -190,7 +190,7 @@ class __$InitialCopyWithImpl<$Res> extends _$OfflineTimerStateCopyWithImpl<$Res>
 class _$_Initial extends _Initial {
   const _$_Initial(
       {this.isStop = true,
-      this.minuteOfNumberPicker = 1,
+      this.minuteOfNumberPicker = 15,
       this.hourOfNumberPicker = 0,
       this.timerDuration = const Duration(minutes: 15)})
       : super._();

@@ -30,6 +30,7 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
       child: BlocConsumer<OfflineTimerCubit, OfflineTimerState>(
         listener: (context, state) {
           timerController!.duration = state.timerDuration;
+
           if (state.isStop) {
             timerController!.pause();
           } else if (!state.isStop) {

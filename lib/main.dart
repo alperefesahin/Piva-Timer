@@ -14,7 +14,6 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        debugShowCheckedModeBanner: false, title: 'Piva', home: TimerPage());
+    return const MaterialApp(debugShowCheckedModeBanner: false, title: 'Piva', home: TimerPage());
   }
 }
