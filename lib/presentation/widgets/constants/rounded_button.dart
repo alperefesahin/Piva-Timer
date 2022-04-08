@@ -12,13 +12,16 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+      focusColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      highlightColor: Colors.transparent,
+      splashColor: Colors.transparent,
       onTap: onTap,
       child: Container(
         width: MediaQuery.of(context).size.width / 4,
         height: MediaQuery.of(context).size.height / 7,
-        decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(100.0), boxShadow: const [
-          BoxShadow(color: Color.fromARGB(162, 0, 0, 0), blurRadius: 20, blurStyle: BlurStyle.outer)
-        ]),
+        decoration: BoxDecoration(
+            color: Colors.white, borderRadius: BorderRadius.circular(100.0), boxShadow: const [BoxShadow(color: Color.fromARGB(162, 0, 0, 0), blurRadius: 20, blurStyle: BlurStyle.outer)]),
         child: Center(
           child: Text(
             text,

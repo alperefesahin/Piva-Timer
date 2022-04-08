@@ -1,10 +1,10 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:piva/application/cubit/offline_timer/offline_timer_cubit.dart';
+import 'package:piva/application/timer/timer_cubit.dart';
 
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_body.dart';
-import 'package:simple_timer/simple_timer.dart';
+import 'package:simple_timer/simple_timer.dart' as timer_widget;
 
 class TimerPage extends StatefulWidget {
   const TimerPage({
@@ -16,18 +16,18 @@ class TimerPage extends StatefulWidget {
 }
 
 class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMixin {
-  TimerController? timerController;
+  timer_widget.TimerController? timerController;
   @override
   void initState() {
-    timerController = TimerController(this);
+    timerController = timer_widget.TimerController(this);
     super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => OfflineTimerCubit(),
-      child: BlocConsumer<OfflineTimerCubit, OfflineTimerState>(
+      create: (context) => TimerCubit(),
+      child: BlocConsumer<TimerCubit, TimerState>(
         listener: (context, state) {
           timerController!.duration = state.timerDuration;
 
