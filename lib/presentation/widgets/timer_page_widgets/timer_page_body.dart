@@ -48,29 +48,50 @@ class TimerPageBody extends StatelessWidget {
             TimerPageBodyWaveAnimation(
               state: state,
             ),
-            state.isStop
-                ? Padding(
-                    padding: const EdgeInsets.only(top: 50),
-                    child: Center(
-                        child: RoundedButton(
-                            text: "Start",
-                            onTap: () {
-                              if (state.timerDuration != Duration.zero) {
-                                context.read<TimerCubit>().startTimer();
-                              } else if (state.timerIsZero) {
-                                timerIsZeroError(context);
-                              }
-                            })))
-                : Padding(
-                    padding: const EdgeInsets.only(top: 50),
-                    child: Center(
-                        child: RoundedButton(
-                      text: "Stop",
-                      onTap: () {
-                        context.read<TimerCubit>().stopTimer();
-                      },
-                    )),
-                  )
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                state.isStop
+                    ? Padding(
+                        padding: const EdgeInsets.only(top: 50),
+                        child: Center(
+                            child: RoundedButton(
+                          text: "Start",
+                          onTap: () {
+                            if (state.timerDuration != Duration.zero) {
+                              context.read<TimerCubit>().startTimer();
+                            } else if (state.timerIsZero) {
+                              timerIsZeroError(context);
+                            }
+                          },
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.height / 7,
+                        )))
+                    : Padding(
+                        padding: const EdgeInsets.only(top: 50),
+                        child: Center(
+                            child: RoundedButton(
+                          text: "Stop",
+                          onTap: () {
+                            context.read<TimerCubit>().stopTimer();
+                          },
+                          width: MediaQuery.of(context).size.width / 4,
+                          height: MediaQuery.of(context).size.height / 7,
+                        )),
+                      ),
+                Padding(
+                    padding: const EdgeInsets.only(top: 50, left: 10),
+                  child: RoundedButton(
+                    text: "Reset",
+                    onTap: () {
+                      context.read<TimerCubit>().resetTimer();
+                    },
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: MediaQuery.of(context).size.height / 12,
+                  ),
+                )
+              ],
+            )
           ],
         ))
       ],

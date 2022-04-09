@@ -1,7 +1,7 @@
-import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
+import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_app_bar.dart';
 
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_body.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
@@ -30,7 +30,9 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
       child: BlocConsumer<TimerCubit, TimerState>(
         listener: (context, state) {
           timerController!.duration = state.timerDuration;
-
+          if (state.isReseted) {
+            timerController!.reset();
+          }
           if (state.isStop) {
             timerController!.pause();
           } else if (!state.isStop) {
@@ -39,21 +41,9 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
         },
         builder: (context, state) {
           return Scaffold(
-            appBar: AppBar(
-              backgroundColor: Colors.teal,
-              title: const AutoSizeText(
-                "Timer",
-                maxLines: 1,
-                minFontSize: 16,
-                maxFontSize: 19,
-              ),
-              centerTitle: true,
-            ),
+            appBar: timerPageAppBar(),
             backgroundColor: Colors.white,
-            body: TimerPageBody(
-              state: state,
-              timerController: timerController!,
-            ),
+            body: TimerPageBody(state: state, timerController: timerController!),
           );
         },
       ),

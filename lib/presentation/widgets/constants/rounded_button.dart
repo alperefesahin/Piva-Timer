@@ -5,9 +5,13 @@ class RoundedButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.onTap,
+    required this.width,
+    required this.height,
   }) : super(key: key);
   final String text;
   final VoidCallback onTap;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +22,8 @@ class RoundedButton extends StatelessWidget {
       splashColor: Colors.transparent,
       onTap: onTap,
       child: Container(
-        width: MediaQuery.of(context).size.width / 4,
-        height: MediaQuery.of(context).size.height / 7,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
             color: Colors.white, borderRadius: BorderRadius.circular(100.0), boxShadow: const [BoxShadow(color: Color.fromARGB(162, 0, 0, 0), blurRadius: 20, blurStyle: BlurStyle.outer)]),
         child: Center(

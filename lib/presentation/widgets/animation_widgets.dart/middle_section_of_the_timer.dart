@@ -37,20 +37,11 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
 
   @override
   Widget build(BuildContext context) {
-    return !widget.state.isStop
-        ? FadeTransition(
-            opacity: _animation,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SizedBox(
-                  height: MediaQuery.of(context).size.height / 7,
-                  child: Center(
-                      child: Text(
-                    "You are working for ${widget.state.spentFocusedTime} seconds",
-                    style: const TextStyle(fontSize: 19),
-                  ))),
-            ))
-        : Padding(
+    final int workingMinutes = widget.state.spentFocusedTime.inMinutes % 60;
+    final int workingSeconds = widget.state.spentFocusedTime.inSeconds % 60;
+
+    return widget.state.isReseted
+        ? Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
               height: MediaQuery.of(context).size.height / 7,
@@ -91,8 +82,39 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
                           }),
                     ],
                   ),
+                  Column(
+                    children: [
+                      const Text(
+                        "Seconds",
+                        style: TextStyle(fontSize: 23),
+                      ),
+                      NumberPicker(
+                          itemCount: 3,
+                          itemHeight: 25,
+                          minValue: 0,
+                          maxValue: 59,
+                          value: widget.state.secondOfNumberPicker,
+                          onChanged: (int seconds) {
+                            context.read<TimerCubit>().updateSecondOfNumberPicker(seconds);
+                          }),
+                    ],
+                  ),
                 ],
               ),
+            ),
+          )
+        : FadeTransition(
+            opacity: _animation,
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: SizedBox(
+                  height: MediaQuery.of(context).size.height / 7,
+                  child: Center(
+                      child: Text(
+                    "You are working for $workingMinutes minutes and $workingSeconds seconds...",
+                    textAlign: TextAlign.center,
+                    style: const TextStyle(fontSize: 19),
+                  ))),
             ));
   }
 }
