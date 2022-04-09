@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
-import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_app_bar.dart';
+import 'package:piva/presentation/widgets/timer_page_widgets/app_bar_widgets/timer_page_app_bar.dart';
 
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_body.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
