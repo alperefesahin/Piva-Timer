@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
 import 'package:piva/infrastructure/notification/notification_api.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/app_bar_widgets/timer_page_app_bar.dart';
@@ -46,8 +47,8 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
           }
         },
         builder: (context, state) {
-          return Scaffold(
-            appBar: timerPageAppBar(),
+          return PlatformScaffold(
+            appBar: timerPageAppBar(context),
             backgroundColor: Colors.white,
             body: TimerPageBody(state: state, timerController: timerController!),
           );
