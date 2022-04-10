@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
+import 'package:piva/infrastructure/notification/notification_api.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/app_bar_widgets/timer_page_app_bar.dart';
 
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_body.dart';
@@ -9,8 +10,9 @@ import 'package:simple_timer/simple_timer.dart' as timer_widget;
 class TimerPage extends StatefulWidget {
   const TimerPage({
     Key? key,
+    this.payload,
   }) : super(key: key);
-
+  final String? payload;
   @override
   State<TimerPage> createState() => _TimerPageState();
 }
@@ -19,10 +21,14 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
   timer_widget.TimerController? timerController;
   @override
   void initState() {
-    timerController = timer_widget.TimerController(this);
     super.initState();
+    timerController = timer_widget.TimerController(this);
+    NotificationApi.init(initScheduled: true);
+    listenNotifications();
   }
 
+  void listenNotifications() => NotificationApi.onNotifications.listen(onClickedNotification);
+  void onClickedNotification(String? payload) => Navigator.of(context).push(MaterialPageRoute(builder: (context) => TimerPage(payload: payload)));
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

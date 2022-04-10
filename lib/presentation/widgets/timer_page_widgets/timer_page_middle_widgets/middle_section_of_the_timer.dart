@@ -44,7 +44,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
         ? Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              height: MediaQuery.of(context).size.height / 7,
+              height: MediaQuery.of(context).size.height / 6.5,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
