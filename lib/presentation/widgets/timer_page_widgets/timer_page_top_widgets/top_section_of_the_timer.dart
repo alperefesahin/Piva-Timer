@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
 import 'package:piva/infrastructure/notification/notification_api.dart';
+import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
 
 class TopSectionOfTheTimer extends StatelessWidget {
@@ -19,7 +20,7 @@ class TopSectionOfTheTimer extends StatelessWidget {
             context.read<TimerCubit>().resetTimer();
           },
           onStart: () {
-            NotificationApi.showScheduledNotification(title: "Time is Up!", body: "You worked a lot, it's time to give a break.", scheduledDate: DateTime.now().add(state.timerDuration));
+            NotificationApi.showScheduledNotification(title: timeIsUpTitle, body: timeIsUpBody, scheduledDate: DateTime.now().add(state.timerDuration));
           },
           valueListener: (timeElapsed) {
             context.read<TimerCubit>().updateSpentFocusedTimeInstantly(timeElapsed);

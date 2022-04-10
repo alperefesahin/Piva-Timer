@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:numberpicker/numberpicker.dart';
+import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
 
 import 'package:piva/application/timer/timer_cubit.dart';
@@ -44,14 +45,14 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
         ? Padding(
             padding: const EdgeInsets.all(8.0),
             child: SizedBox(
-              height: MediaQuery.of(context).size.height / 6.5,
+              height: MediaQuery.of(context).size.height / 6,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Column(
                     children: [
                       const Text(
-                        "Hours",
+                        hours,
                         style: TextStyle(fontSize: 23),
                       ),
                       NumberPicker(
@@ -68,7 +69,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
                   Column(
                     children: [
                       const Text(
-                        "Minutes",
+                        minutes,
                         style: TextStyle(fontSize: 23),
                       ),
                       NumberPicker(
@@ -85,7 +86,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
                   Column(
                     children: [
                       const Text(
-                        "Seconds",
+                        seconds,
                         style: TextStyle(fontSize: 23),
                       ),
                       NumberPicker(
@@ -111,7 +112,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
                   height: MediaQuery.of(context).size.height / 7,
                   child: Center(
                       child: Text(
-                    "You are working for $workingMinutes minutes and $workingSeconds seconds...",
+                    workingTimeText(workingSeconds: workingSeconds, workingMinutes: workingMinutes),
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 19),
                   ))),
