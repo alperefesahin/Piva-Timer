@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
-import 'package:piva/presentation/widgets/timer_page_widgets/custom_ui_widgets/custom_snackbar.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/custom_ui_widgets/rounded_button.dart';
+import 'package:piva/presentation/widgets/timer_page_widgets/custom_ui_widgets/timer_error_widget.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_bottom_widgets/timer_page_body_wave_animation.dart';
 
 class BottomSectionOfTheTimer extends StatelessWidget {
@@ -27,9 +27,9 @@ class BottomSectionOfTheTimer extends StatelessWidget {
                         child: RoundedButton(
                       text: start,
                       onTap: () {
-                        if (state.timerDuration != Duration.zero) {
+                        if (!state.timerIsZero) {
                           context.read<TimerCubit>().startTimer();
-                        } else if (state.timerIsZero) {
+                        } else {
                           timerIsZeroError(context);
                         }
                       },

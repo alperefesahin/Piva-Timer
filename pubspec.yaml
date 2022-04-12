@@ -34,7 +34,6 @@ dependencies:
   flutter_countdown_timer: ^4.1.0
   simple_timer: ^2.0.0
   numberpicker: ^2.1.1
-  dartz: ^0.10.1
   wave: ^0.2.0
   flutter_local_notifications: ^9.4.0
   rxdart: ^0.27.3
