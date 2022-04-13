@@ -2,7 +2,7 @@
 
 const String timeIsUpTitle = "Time is Up!";
 
-const String timeIsUpBody = "You worked a lot, it's time to give a break.";
+const String timeIsUpBody = "Wooosh, it's time to give a break!";
 
 const String reset = "Reset";
 

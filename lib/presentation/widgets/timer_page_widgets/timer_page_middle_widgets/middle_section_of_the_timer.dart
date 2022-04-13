@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:numberpicker/numberpicker.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
+import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_middle_widgets/number_picker.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
 
 import 'package:piva/application/timer/timer_cubit.dart';
@@ -42,67 +41,10 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
     final int workingSeconds = widget.state.spentFocusedTime.inSeconds % 60;
 
     return widget.state.isReseted
-        ? Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: SizedBox(
-              height: MediaQuery.of(context).size.height / 6,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      const Text(
-                        hours,
-                        style: TextStyle(fontSize: 23),
-                      ),
-                      NumberPicker(
-                          itemCount: 3,
-                          itemHeight: 25,
-                          minValue: 0,
-                          maxValue: 23,
-                          value: widget.state.hourOfNumberPicker,
-                          onChanged: (int hour) {
-                            context.read<TimerCubit>().updateHourOfNumberPicker(hour);
-                          }),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      const Text(
-                        minutes,
-                        style: TextStyle(fontSize: 23),
-                      ),
-                      NumberPicker(
-                          itemCount: 3,
-                          itemHeight: 25,
-                          minValue: 0,
-                          maxValue: 59,
-                          value: widget.state.minuteOfNumberPicker,
-                          onChanged: (int minute) {
-                            context.read<TimerCubit>().updateMinuteOfNumberPicker(minute);
-                          }),
-                    ],
-                  ),
-                  Column(
-                    children: [
-                      const Text(
-                        seconds,
-                        style: TextStyle(fontSize: 23),
-                      ),
-                      NumberPicker(
-                          itemCount: 3,
-                          itemHeight: 25,
-                          minValue: 0,
-                          maxValue: 59,
-                          value: widget.state.secondOfNumberPicker,
-                          onChanged: (int seconds) {
-                            context.read<TimerCubit>().updateSecondOfNumberPicker(seconds);
-                          }),
-                    ],
-                  ),
-                ],
-              ),
-            ),
+        ? NumberPickerToSetTime(
+            hourOfNumberPicker: widget.state.hourOfNumberPicker,
+            minuteOfNumberPicker: widget.state.minuteOfNumberPicker,
+            secondOfNumberPicker: widget.state.secondOfNumberPicker,
           )
         : FadeTransition(
             opacity: _animation,
