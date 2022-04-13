@@ -43,15 +43,4 @@ class NotificationApi {
     String? payload,
   }) async =>
       _notifications.show(id, title, body, await _notificationDetails());
-
-  static Future showScheduledNotification({int id = 0, required String? title, required String? body, String? payload, required DateTime scheduledDate}) async => _notifications.zonedSchedule(
-        id,
-        title,
-        body,
-        tz.TZDateTime.from(scheduledDate, tz.local),
-        await _notificationDetails(),
-        payload: payload,
-        androidAllowWhileIdle: true,
-        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
-      );
 }

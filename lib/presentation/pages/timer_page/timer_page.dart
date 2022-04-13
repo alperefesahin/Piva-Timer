@@ -44,7 +44,7 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
             timerController!.reset();
           }
           if (state.isStop) {
-            timerController!.pause();
+            timerController!.stop();
           } else if (!state.isStop) {
             timerController!.start();
           }

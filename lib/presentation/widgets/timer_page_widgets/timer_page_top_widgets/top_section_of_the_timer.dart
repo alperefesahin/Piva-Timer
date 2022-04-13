@@ -17,10 +17,8 @@ class TopSectionOfTheTimer extends StatelessWidget {
       width: 200,
       child: timer_widget.SimpleTimer(
           onEnd: () {
+            NotificationApi.showNotification(title: timeIsUpTitle, body: timeIsUpBody);
             context.read<TimerCubit>().resetTimer();
-          },
-          onStart: () {
-            NotificationApi.showScheduledNotification(title: timeIsUpTitle, body: timeIsUpBody, scheduledDate: DateTime.now().add(state.timerDuration));
           },
           valueListener: (timeElapsed) {
             context.read<TimerCubit>().updateSpentFocusedTimeInstantly(timeElapsed);
