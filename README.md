@@ -2,6 +2,8 @@
 Documentation is coming soon...
 
 [![Codemagic build status](https://api.codemagic.io/apps/6252bf270f76ba1786d959b5/6252bf270f76ba1786d959b4/status_badge.svg)](https://codemagic.io/apps/6252bf270f76ba1786d959b5/6252bf270f76ba1786d959b4/latest_build)
+## New Feature: Localization
+![localization1](https://user-images.githubusercontent.com/67283777/163460344-61939ff6-9b94-4901-a925-2176705a108c.gif)
 
 ## Some Gifs From the App
 ![splash_screen](https://user-images.githubusercontent.com/67283777/163138078-1cd38782-815b-46de-a792-ba01fcbda1e1.gif)
