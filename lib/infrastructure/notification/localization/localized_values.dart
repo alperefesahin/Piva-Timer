@@ -1,4 +1,4 @@
-const localizedValues = <String, Map<String, String>>{
+const localizedValues = {
   'en': {
     "timeIsUpTitle": "Time is Up!",
     "timeIsUpBody": "Wooosh, it's time to give a break!",
@@ -10,7 +10,7 @@ const localizedValues = <String, Map<String, String>>{
     "seconds": "Seconds",
     "pivaTimer": "Piva - Timer",
     "timeIsZero": "The time can not be zero!",
-    "workingTimeText": "You are working for..."
+    "workingTimeText": "You are working for{}{}{}..."
   },
   'tr': {
     'timeIsUpTitle': 'Zaman doldu!',
@@ -23,6 +23,6 @@ const localizedValues = <String, Map<String, String>>{
     "seconds": "Saniye",
     "pivaTimer": "Piva - Zamanlayıcı",
     "timeIsZero": "Zaman sıfır olamaz!",
-    "workingTimeText": "...Saniyedir çalışıyorsun..."
+    "workingTimeText": "{}{}{}dir çalışıyorsun..."
   },
 };

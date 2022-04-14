@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
+import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
 import 'package:piva/infrastructure/notification/notification_api.dart';
-import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
 
 class TopSectionOfTheTimer extends StatelessWidget {
@@ -12,12 +12,13 @@ class TopSectionOfTheTimer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _localization = PivaLocalizations.of(context);
     return SizedBox(
       height: 200,
       width: 200,
       child: timer_widget.SimpleTimer(
           onEnd: () {
-            NotificationApi.showNotification(title: timeIsUpTitle, body: timeIsUpBody);
+            NotificationApi.showNotification(title: _localization.timeIsUpTitle, body: _localization.timeIsUpBody);
             context.read<TimerCubit>().resetTimer();
           },
           valueListener: (timeElapsed) {

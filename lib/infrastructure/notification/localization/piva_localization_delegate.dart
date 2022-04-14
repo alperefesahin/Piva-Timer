@@ -6,7 +6,7 @@ class PivaLocalizationsDelegate extends LocalizationsDelegate<PivaLocalizations>
   const PivaLocalizationsDelegate();
 
   @override
-  bool isSupported(Locale locale) => PivaLocalizations.languages().contains(locale.languageCode);
+  bool isSupported(Locale locale) => true;
 
   @override
   Future<PivaLocalizations> load(Locale locale) {

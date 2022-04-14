@@ -40,4 +40,3 @@ class TimerPageBodyWaveAnimation extends StatelessWidget {
     );
   }
 }
-
