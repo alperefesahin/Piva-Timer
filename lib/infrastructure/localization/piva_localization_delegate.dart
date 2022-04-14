@@ -1,6 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
+import 'package:piva/infrastructure/localization/piva_localization.dart';
 
 class PivaLocalizationsDelegate extends LocalizationsDelegate<PivaLocalizations> {
   const PivaLocalizationsDelegate();

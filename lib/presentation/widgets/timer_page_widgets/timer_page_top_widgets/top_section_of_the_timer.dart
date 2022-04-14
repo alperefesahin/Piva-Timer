@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
-import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
+import 'package:piva/infrastructure/localization/piva_localization.dart';
 import 'package:piva/infrastructure/notification/notification_api.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
 

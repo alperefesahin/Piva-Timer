@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:piva/infrastructure/notification/localization/localized_values.dart';
+import 'package:piva/infrastructure/localization/localized_values.dart';
 import 'package:format/format.dart';
 
 class PivaLocalizations {

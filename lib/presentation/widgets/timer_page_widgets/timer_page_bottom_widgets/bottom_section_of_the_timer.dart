@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
-import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
+import 'package:piva/infrastructure/localization/piva_localization.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/custom_ui_widgets/timer_error_widget.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_bottom_widgets/timer_page_body_wave_animation.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_bottom_widgets/timer_page_button.dart';

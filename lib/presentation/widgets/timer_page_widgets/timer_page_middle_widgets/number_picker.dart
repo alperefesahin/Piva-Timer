@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
-import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
+import 'package:piva/infrastructure/localization/piva_localization.dart';
 
 class NumberPickerToSetTime extends StatelessWidget {
   const NumberPickerToSetTime({Key? key, required this.hourOfNumberPicker, required this.minuteOfNumberPicker, required this.secondOfNumberPicker}) : super(key: key);

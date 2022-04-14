@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:piva/application/localization/localization_cubit.dart';
-import 'package:piva/infrastructure/notification/localization/piva_localization_delegate.dart';
+import 'package:piva/infrastructure/localization/piva_localization_delegate.dart';
 import 'package:piva/presentation/pages/timer_page/timer_page.dart';
 
 class AppWidget extends StatelessWidget {
