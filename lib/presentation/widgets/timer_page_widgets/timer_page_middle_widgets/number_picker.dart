@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:numberpicker/numberpicker.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
+import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
 
 class NumberPickerToSetTime extends StatelessWidget {
@@ -12,6 +13,7 @@ class NumberPickerToSetTime extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final _localization = PivaLocalizations.of(context);
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: SizedBox(
@@ -21,9 +23,9 @@ class NumberPickerToSetTime extends StatelessWidget {
           children: [
             Column(
               children: [
-                const Text(
-                  hours,
-                  style: TextStyle(fontSize: 23),
+                Text(
+                  _localization.hours,
+                  style: const TextStyle(fontSize: 23),
                 ),
                 NumberPicker(
                     itemCount: 3,
@@ -38,9 +40,9 @@ class NumberPickerToSetTime extends StatelessWidget {
             ),
             Column(
               children: [
-                const Text(
-                  minutes,
-                  style: TextStyle(fontSize: 23),
+                Text(
+                  _localization.minutes,
+                  style: const TextStyle(fontSize: 23),
                 ),
                 NumberPicker(
                     itemCount: 3,
@@ -55,9 +57,9 @@ class NumberPickerToSetTime extends StatelessWidget {
             ),
             Column(
               children: [
-                const Text(
-                  seconds,
-                  style: TextStyle(fontSize: 23),
+                Text(
+                  _localization.seconds,
+                  style: const TextStyle(fontSize: 23),
                 ),
                 NumberPicker(
                     itemCount: 3,

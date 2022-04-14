@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_middle_widgets/number_picker.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
@@ -39,6 +40,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
   Widget build(BuildContext context) {
     final int workingMinutes = widget.state.spentFocusedTime.inMinutes % 60;
     final int workingSeconds = widget.state.spentFocusedTime.inSeconds % 60;
+    final _localization = PivaLocalizations.of(context);
 
     return widget.state.isReseted
         ? NumberPickerToSetTime(
@@ -54,7 +56,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
                   height: MediaQuery.of(context).size.height / 7,
                   child: Center(
                       child: Text(
-                    workingTimeText(workingSeconds: workingSeconds, workingMinutes: workingMinutes),
+                    _localization.workingTimeText,
                     textAlign: TextAlign.center,
                     style: const TextStyle(fontSize: 19),
                   ))),

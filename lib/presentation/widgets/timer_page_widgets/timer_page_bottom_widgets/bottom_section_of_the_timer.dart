@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
+import 'package:piva/infrastructure/notification/localization/piva_localization.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/constants/constantTexts.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/custom_ui_widgets/timer_error_widget.dart';
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_bottom_widgets/timer_page_body_wave_animation.dart';
@@ -11,6 +12,7 @@ class BottomSectionOfTheTimer extends StatelessWidget {
   final TimerState state;
   @override
   Widget build(BuildContext context) {
+    final _localization = PivaLocalizations.of(context);
     return Expanded(
         child: Stack(
       children: [
@@ -23,7 +25,7 @@ class BottomSectionOfTheTimer extends StatelessWidget {
             state.isStop
                 ? TimerPageButton(
                     state: state,
-                    buttonText: start,
+                    buttonText: _localization.start,
                     buttonOnTap: () {
                       if (!state.timerIsZero) {
                         context.read<TimerCubit>().startTimer();
@@ -36,7 +38,7 @@ class BottomSectionOfTheTimer extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 50))
                 : TimerPageButton(
                     state: state,
-                    buttonText: stop,
+                    buttonText: _localization.stop,
                     buttonOnTap: () {
                       context.read<TimerCubit>().stopTimer();
                     },
@@ -45,7 +47,7 @@ class BottomSectionOfTheTimer extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 50)),
             TimerPageButton(
                 state: state,
-                buttonText: reset,
+                buttonText: _localization.reset,
                 buttonOnTap: () {
                   context.read<TimerCubit>().resetTimer();
                 },

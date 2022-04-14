@@ -29,6 +29,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_localizations:
+    sdk: flutter
   flutter_bloc: ^8.0.1
   freezed_annotation: ^1.1.0
   flutter_countdown_timer: ^4.1.0
