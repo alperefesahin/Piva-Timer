@@ -21,29 +21,31 @@ class BottomSectionOfTheTimer extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            state.isStop
-                ? TimerPageButton(
-                    state: state,
-                    buttonText: _localization.start,
-                    buttonOnTap: () {
-                      if (!state.timerIsZero) {
-                        context.read<TimerCubit>().startTimer();
-                      } else {
-                        timerIsZeroError(context);
-                      }
-                    },
-                    width: MediaQuery.of(context).size.width / 4,
-                    height: MediaQuery.of(context).size.height / 7,
-                    padding: const EdgeInsets.only(top: 50))
-                : TimerPageButton(
-                    state: state,
-                    buttonText: _localization.stop,
-                    buttonOnTap: () {
-                      context.read<TimerCubit>().stopTimer();
-                    },
-                    width: MediaQuery.of(context).size.width / 4,
-                    height: MediaQuery.of(context).size.height / 7,
-                    padding: const EdgeInsets.only(top: 50)),
+            !state.isTimersDurationUp
+                ? state.isTimerStopped
+                    ? TimerPageButton(
+                        state: state,
+                        buttonText: _localization.start,
+                        buttonOnTap: () {
+                          if (!state.timerIsZero) {
+                            context.read<TimerCubit>().startTimer();
+                          } else {
+                            timerIsZeroError(context);
+                          }
+                        },
+                        width: MediaQuery.of(context).size.width / 4,
+                        height: MediaQuery.of(context).size.height / 7,
+                        padding: const EdgeInsets.only(top: 50))
+                    : TimerPageButton(
+                        state: state,
+                        buttonText: _localization.stop,
+                        buttonOnTap: () {
+                          context.read<TimerCubit>().stopTimer();
+                        },
+                        width: MediaQuery.of(context).size.width / 4,
+                        height: MediaQuery.of(context).size.height / 7,
+                        padding: const EdgeInsets.only(top: 50))
+                : Container(),
             TimerPageButton(
                 state: state,
                 buttonText: _localization.reset,

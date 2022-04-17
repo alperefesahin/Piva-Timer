@@ -51,7 +51,7 @@ class _MiddleSectionOfTheTimerState extends State<MiddleSectionOfTheTimer> with 
     final String seconds = " $workingSeconds ";
     final String secondsText = _localization.seconds;
 
-    return widget.state.isReseted
+    return widget.state.isTimerReseted
         ? NumberPickerToSetTime(
             hourOfNumberPicker: widget.state.hourOfNumberPicker,
             minuteOfNumberPicker: widget.state.minuteOfNumberPicker,

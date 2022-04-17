@@ -7,7 +7,7 @@ import 'package:timezone/data/latest.dart' as time_zone;
 class NotificationApi {
   static const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('random_img.jpg');
 
-  static final _notifications = FlutterLocalNotificationsPlugin();
+  static final notifications = FlutterLocalNotificationsPlugin();
   static final onNotifications = BehaviorSubject<String?>();
   static Future _notificationDetails() async {
     return const NotificationDetails(
@@ -25,7 +25,7 @@ class NotificationApi {
     const android = AndroidInitializationSettings("@mipmap/ic_launcher");
     const settings = InitializationSettings(android: android, iOS: iOS);
 
-    await _notifications.initialize(settings, onSelectNotification: (payload) async {
+    await notifications.initialize(settings, onSelectNotification: (payload) async {
       onNotifications.add(payload);
     });
 
@@ -36,11 +36,20 @@ class NotificationApi {
     }
   }
 
-  static Future showNotification({
+  static Future zonedScheduleNotification({
     int id = 0,
     required String? title,
     required String? body,
     String? payload,
+    required int microSeconds,
   }) async =>
-      _notifications.show(id, title, body, await _notificationDetails());
+      await notifications.zonedSchedule(
+        id,
+        title,
+        body,
+        tz.TZDateTime.now(tz.local).add(Duration(microseconds: microSeconds, milliseconds: 500)),
+        await _notificationDetails(),
+        androidAllowWhileIdle: true,
+        uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
+      );
 }

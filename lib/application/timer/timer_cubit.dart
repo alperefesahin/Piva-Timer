@@ -10,7 +10,7 @@ class TimerCubit extends Cubit<TimerState> {
   void updateSecondOfNumberPicker(int seconds) {
     emit(state.copyWith(
         secondOfNumberPicker: seconds,
-        timerDuration: Duration(
+        durationOfTimer: Duration(
           minutes: state.minuteOfNumberPicker,
           hours: state.hourOfNumberPicker,
           seconds: seconds,
@@ -20,7 +20,7 @@ class TimerCubit extends Cubit<TimerState> {
   void updateMinuteOfNumberPicker(int minute) {
     emit(state.copyWith(
         minuteOfNumberPicker: minute,
-        timerDuration: Duration(
+        durationOfTimer: Duration(
           minutes: minute,
           hours: state.hourOfNumberPicker,
           seconds: state.secondOfNumberPicker,
@@ -30,7 +30,7 @@ class TimerCubit extends Cubit<TimerState> {
   void updateHourOfNumberPicker(int hour) {
     emit(state.copyWith(
         hourOfNumberPicker: hour,
-        timerDuration: Duration(
+        durationOfTimer: Duration(
           minutes: state.minuteOfNumberPicker,
           hours: hour,
           seconds: state.secondOfNumberPicker,
@@ -38,18 +38,22 @@ class TimerCubit extends Cubit<TimerState> {
   }
 
   void startTimer() {
-    emit(state.copyWith(isStop: false, isReseted: false));
+    emit(state.copyWith(isTimerStopped: false, isTimerReseted: false));
   }
 
   void stopTimer() {
-    emit(state.copyWith(isStop: true));
+    emit(state.copyWith(isTimerStopped: true, isTimerReseted: false));
   }
 
   void resetTimer() {
-    emit(state.copyWith(isReseted: true, isStop: true));
+    emit(state.copyWith(isTimerReseted: true, isTimerStopped: true, isTimersDurationUp: false));
   }
 
   void updateSpentFocusedTimeInstantly(Duration duration) {
     emit(state.copyWith(spentFocusedTime: duration));
+  }
+
+  void updateStateOfTimersDurationUp() {
+    emit(state.copyWith(isTimersDurationUp: true));
   }
 }

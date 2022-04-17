@@ -25,7 +25,9 @@ class RoundedButton extends StatelessWidget {
         width: width,
         height: height,
         decoration: BoxDecoration(
-            color: Colors.white, borderRadius: BorderRadius.circular(100.0), boxShadow: const [BoxShadow(color: Color.fromARGB(162, 0, 0, 0), blurRadius: 20, blurStyle: BlurStyle.outer)]),
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(100.0),
+            boxShadow: const [BoxShadow(color: Color.fromARGB(162, 0, 0, 0), blurRadius: 20, blurStyle: BlurStyle.outer)]),
         child: Center(
           child: Text(
             text,

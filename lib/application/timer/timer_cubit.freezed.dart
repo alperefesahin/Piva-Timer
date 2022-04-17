@@ -19,17 +19,19 @@ class _$TimerStateTearOff {
   const _$TimerStateTearOff();
 
   _Initial initial(
-      {bool isStop = true,
-      bool isReseted = true,
-      Duration timerDuration = const Duration(minutes: 15),
+      {bool isTimerStopped = true,
+      bool isTimerReseted = true,
+      bool isTimersDurationUp = false,
+      Duration durationOfTimer = const Duration(minutes: 15),
       Duration spentFocusedTime = Duration.zero,
       int minuteOfNumberPicker = 15,
       int hourOfNumberPicker = 0,
       int secondOfNumberPicker = 0}) {
     return _Initial(
-      isStop: isStop,
-      isReseted: isReseted,
-      timerDuration: timerDuration,
+      isTimerStopped: isTimerStopped,
+      isTimerReseted: isTimerReseted,
+      isTimersDurationUp: isTimersDurationUp,
+      durationOfTimer: durationOfTimer,
       spentFocusedTime: spentFocusedTime,
       minuteOfNumberPicker: minuteOfNumberPicker,
       hourOfNumberPicker: hourOfNumberPicker,
@@ -43,9 +45,10 @@ const $TimerState = _$TimerStateTearOff();
 
 /// @nodoc
 mixin _$TimerState {
-  bool get isStop => throw _privateConstructorUsedError;
-  bool get isReseted => throw _privateConstructorUsedError;
-  Duration get timerDuration => throw _privateConstructorUsedError;
+  bool get isTimerStopped => throw _privateConstructorUsedError;
+  bool get isTimerReseted => throw _privateConstructorUsedError;
+  bool get isTimersDurationUp => throw _privateConstructorUsedError;
+  Duration get durationOfTimer => throw _privateConstructorUsedError;
   Duration get spentFocusedTime => throw _privateConstructorUsedError;
   int get minuteOfNumberPicker => throw _privateConstructorUsedError;
   int get hourOfNumberPicker => throw _privateConstructorUsedError;
@@ -54,9 +57,10 @@ mixin _$TimerState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            bool isStop,
-            bool isReseted,
-            Duration timerDuration,
+            bool isTimerStopped,
+            bool isTimerReseted,
+            bool isTimersDurationUp,
+            Duration durationOfTimer,
             Duration spentFocusedTime,
             int minuteOfNumberPicker,
             int hourOfNumberPicker,
@@ -67,9 +71,10 @@ mixin _$TimerState {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            bool isStop,
-            bool isReseted,
-            Duration timerDuration,
+            bool isTimerStopped,
+            bool isTimerReseted,
+            bool isTimersDurationUp,
+            Duration durationOfTimer,
             Duration spentFocusedTime,
             int minuteOfNumberPicker,
             int hourOfNumberPicker,
@@ -80,9 +85,10 @@ mixin _$TimerState {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            bool isStop,
-            bool isReseted,
-            Duration timerDuration,
+            bool isTimerStopped,
+            bool isTimerReseted,
+            bool isTimersDurationUp,
+            Duration durationOfTimer,
             Duration spentFocusedTime,
             int minuteOfNumberPicker,
             int hourOfNumberPicker,
@@ -119,9 +125,10 @@ abstract class $TimerStateCopyWith<$Res> {
           TimerState value, $Res Function(TimerState) then) =
       _$TimerStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isStop,
-      bool isReseted,
-      Duration timerDuration,
+      {bool isTimerStopped,
+      bool isTimerReseted,
+      bool isTimersDurationUp,
+      Duration durationOfTimer,
       Duration spentFocusedTime,
       int minuteOfNumberPicker,
       int hourOfNumberPicker,
@@ -138,26 +145,31 @@ class _$TimerStateCopyWithImpl<$Res> implements $TimerStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object? isStop = freezed,
-    Object? isReseted = freezed,
-    Object? timerDuration = freezed,
+    Object? isTimerStopped = freezed,
+    Object? isTimerReseted = freezed,
+    Object? isTimersDurationUp = freezed,
+    Object? durationOfTimer = freezed,
     Object? spentFocusedTime = freezed,
     Object? minuteOfNumberPicker = freezed,
     Object? hourOfNumberPicker = freezed,
     Object? secondOfNumberPicker = freezed,
   }) {
     return _then(_value.copyWith(
-      isStop: isStop == freezed
-          ? _value.isStop
-          : isStop // ignore: cast_nullable_to_non_nullable
+      isTimerStopped: isTimerStopped == freezed
+          ? _value.isTimerStopped
+          : isTimerStopped // ignore: cast_nullable_to_non_nullable
               as bool,
-      isReseted: isReseted == freezed
-          ? _value.isReseted
-          : isReseted // ignore: cast_nullable_to_non_nullable
+      isTimerReseted: isTimerReseted == freezed
+          ? _value.isTimerReseted
+          : isTimerReseted // ignore: cast_nullable_to_non_nullable
               as bool,
-      timerDuration: timerDuration == freezed
-          ? _value.timerDuration
-          : timerDuration // ignore: cast_nullable_to_non_nullable
+      isTimersDurationUp: isTimersDurationUp == freezed
+          ? _value.isTimersDurationUp
+          : isTimersDurationUp // ignore: cast_nullable_to_non_nullable
+              as bool,
+      durationOfTimer: durationOfTimer == freezed
+          ? _value.durationOfTimer
+          : durationOfTimer // ignore: cast_nullable_to_non_nullable
               as Duration,
       spentFocusedTime: spentFocusedTime == freezed
           ? _value.spentFocusedTime
@@ -185,9 +197,10 @@ abstract class _$InitialCopyWith<$Res> implements $TimerStateCopyWith<$Res> {
       __$InitialCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isStop,
-      bool isReseted,
-      Duration timerDuration,
+      {bool isTimerStopped,
+      bool isTimerReseted,
+      bool isTimersDurationUp,
+      Duration durationOfTimer,
       Duration spentFocusedTime,
       int minuteOfNumberPicker,
       int hourOfNumberPicker,
@@ -205,26 +218,31 @@ class __$InitialCopyWithImpl<$Res> extends _$TimerStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? isStop = freezed,
-    Object? isReseted = freezed,
-    Object? timerDuration = freezed,
+    Object? isTimerStopped = freezed,
+    Object? isTimerReseted = freezed,
+    Object? isTimersDurationUp = freezed,
+    Object? durationOfTimer = freezed,
     Object? spentFocusedTime = freezed,
     Object? minuteOfNumberPicker = freezed,
     Object? hourOfNumberPicker = freezed,
     Object? secondOfNumberPicker = freezed,
   }) {
     return _then(_Initial(
-      isStop: isStop == freezed
-          ? _value.isStop
-          : isStop // ignore: cast_nullable_to_non_nullable
+      isTimerStopped: isTimerStopped == freezed
+          ? _value.isTimerStopped
+          : isTimerStopped // ignore: cast_nullable_to_non_nullable
               as bool,
-      isReseted: isReseted == freezed
-          ? _value.isReseted
-          : isReseted // ignore: cast_nullable_to_non_nullable
+      isTimerReseted: isTimerReseted == freezed
+          ? _value.isTimerReseted
+          : isTimerReseted // ignore: cast_nullable_to_non_nullable
               as bool,
-      timerDuration: timerDuration == freezed
-          ? _value.timerDuration
-          : timerDuration // ignore: cast_nullable_to_non_nullable
+      isTimersDurationUp: isTimersDurationUp == freezed
+          ? _value.isTimersDurationUp
+          : isTimersDurationUp // ignore: cast_nullable_to_non_nullable
+              as bool,
+      durationOfTimer: durationOfTimer == freezed
+          ? _value.durationOfTimer
+          : durationOfTimer // ignore: cast_nullable_to_non_nullable
               as Duration,
       spentFocusedTime: spentFocusedTime == freezed
           ? _value.spentFocusedTime
@@ -250,9 +268,10 @@ class __$InitialCopyWithImpl<$Res> extends _$TimerStateCopyWithImpl<$Res>
 
 class _$_Initial extends _Initial {
   const _$_Initial(
-      {this.isStop = true,
-      this.isReseted = true,
-      this.timerDuration = const Duration(minutes: 15),
+      {this.isTimerStopped = true,
+      this.isTimerReseted = true,
+      this.isTimersDurationUp = false,
+      this.durationOfTimer = const Duration(minutes: 15),
       this.spentFocusedTime = Duration.zero,
       this.minuteOfNumberPicker = 15,
       this.hourOfNumberPicker = 0,
@@ -261,13 +280,16 @@ class _$_Initial extends _Initial {
 
   @JsonKey()
   @override
-  final bool isStop;
+  final bool isTimerStopped;
   @JsonKey()
   @override
-  final bool isReseted;
+  final bool isTimerReseted;
   @JsonKey()
   @override
-  final Duration timerDuration;
+  final bool isTimersDurationUp;
+  @JsonKey()
+  @override
+  final Duration durationOfTimer;
   @JsonKey()
   @override
   final Duration spentFocusedTime;
@@ -283,7 +305,7 @@ class _$_Initial extends _Initial {
 
   @override
   String toString() {
-    return 'TimerState.initial(isStop: $isStop, isReseted: $isReseted, timerDuration: $timerDuration, spentFocusedTime: $spentFocusedTime, minuteOfNumberPicker: $minuteOfNumberPicker, hourOfNumberPicker: $hourOfNumberPicker, secondOfNumberPicker: $secondOfNumberPicker)';
+    return 'TimerState.initial(isTimerStopped: $isTimerStopped, isTimerReseted: $isTimerReseted, isTimersDurationUp: $isTimersDurationUp, durationOfTimer: $durationOfTimer, spentFocusedTime: $spentFocusedTime, minuteOfNumberPicker: $minuteOfNumberPicker, hourOfNumberPicker: $hourOfNumberPicker, secondOfNumberPicker: $secondOfNumberPicker)';
   }
 
   @override
@@ -291,10 +313,14 @@ class _$_Initial extends _Initial {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _Initial &&
-            const DeepCollectionEquality().equals(other.isStop, isStop) &&
-            const DeepCollectionEquality().equals(other.isReseted, isReseted) &&
             const DeepCollectionEquality()
-                .equals(other.timerDuration, timerDuration) &&
+                .equals(other.isTimerStopped, isTimerStopped) &&
+            const DeepCollectionEquality()
+                .equals(other.isTimerReseted, isTimerReseted) &&
+            const DeepCollectionEquality()
+                .equals(other.isTimersDurationUp, isTimersDurationUp) &&
+            const DeepCollectionEquality()
+                .equals(other.durationOfTimer, durationOfTimer) &&
             const DeepCollectionEquality()
                 .equals(other.spentFocusedTime, spentFocusedTime) &&
             const DeepCollectionEquality()
@@ -308,9 +334,10 @@ class _$_Initial extends _Initial {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(isStop),
-      const DeepCollectionEquality().hash(isReseted),
-      const DeepCollectionEquality().hash(timerDuration),
+      const DeepCollectionEquality().hash(isTimerStopped),
+      const DeepCollectionEquality().hash(isTimerReseted),
+      const DeepCollectionEquality().hash(isTimersDurationUp),
+      const DeepCollectionEquality().hash(durationOfTimer),
       const DeepCollectionEquality().hash(spentFocusedTime),
       const DeepCollectionEquality().hash(minuteOfNumberPicker),
       const DeepCollectionEquality().hash(hourOfNumberPicker),
@@ -325,43 +352,60 @@ class _$_Initial extends _Initial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function(
-            bool isStop,
-            bool isReseted,
-            Duration timerDuration,
+            bool isTimerStopped,
+            bool isTimerReseted,
+            bool isTimersDurationUp,
+            Duration durationOfTimer,
             Duration spentFocusedTime,
             int minuteOfNumberPicker,
             int hourOfNumberPicker,
             int secondOfNumberPicker)
         initial,
   }) {
-    return initial(isStop, isReseted, timerDuration, spentFocusedTime,
-        minuteOfNumberPicker, hourOfNumberPicker, secondOfNumberPicker);
+    return initial(
+        isTimerStopped,
+        isTimerReseted,
+        isTimersDurationUp,
+        durationOfTimer,
+        spentFocusedTime,
+        minuteOfNumberPicker,
+        hourOfNumberPicker,
+        secondOfNumberPicker);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function(
-            bool isStop,
-            bool isReseted,
-            Duration timerDuration,
+            bool isTimerStopped,
+            bool isTimerReseted,
+            bool isTimersDurationUp,
+            Duration durationOfTimer,
             Duration spentFocusedTime,
             int minuteOfNumberPicker,
             int hourOfNumberPicker,
             int secondOfNumberPicker)?
         initial,
   }) {
-    return initial?.call(isStop, isReseted, timerDuration, spentFocusedTime,
-        minuteOfNumberPicker, hourOfNumberPicker, secondOfNumberPicker);
+    return initial?.call(
+        isTimerStopped,
+        isTimerReseted,
+        isTimersDurationUp,
+        durationOfTimer,
+        spentFocusedTime,
+        minuteOfNumberPicker,
+        hourOfNumberPicker,
+        secondOfNumberPicker);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(
-            bool isStop,
-            bool isReseted,
-            Duration timerDuration,
+            bool isTimerStopped,
+            bool isTimerReseted,
+            bool isTimersDurationUp,
+            Duration durationOfTimer,
             Duration spentFocusedTime,
             int minuteOfNumberPicker,
             int hourOfNumberPicker,
@@ -370,8 +414,15 @@ class _$_Initial extends _Initial {
     required TResult orElse(),
   }) {
     if (initial != null) {
-      return initial(isStop, isReseted, timerDuration, spentFocusedTime,
-          minuteOfNumberPicker, hourOfNumberPicker, secondOfNumberPicker);
+      return initial(
+          isTimerStopped,
+          isTimerReseted,
+          isTimersDurationUp,
+          durationOfTimer,
+          spentFocusedTime,
+          minuteOfNumberPicker,
+          hourOfNumberPicker,
+          secondOfNumberPicker);
     }
     return orElse();
   }
@@ -407,9 +458,10 @@ class _$_Initial extends _Initial {
 
 abstract class _Initial extends TimerState {
   const factory _Initial(
-      {bool isStop,
-      bool isReseted,
-      Duration timerDuration,
+      {bool isTimerStopped,
+      bool isTimerReseted,
+      bool isTimersDurationUp,
+      Duration durationOfTimer,
       Duration spentFocusedTime,
       int minuteOfNumberPicker,
       int hourOfNumberPicker,
@@ -417,11 +469,13 @@ abstract class _Initial extends TimerState {
   const _Initial._() : super._();
 
   @override
-  bool get isStop;
+  bool get isTimerStopped;
   @override
-  bool get isReseted;
+  bool get isTimerReseted;
   @override
-  Duration get timerDuration;
+  bool get isTimersDurationUp;
+  @override
+  Duration get durationOfTimer;
   @override
   Duration get spentFocusedTime;
   @override

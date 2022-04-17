@@ -5,10 +5,11 @@ class TimerState with _$TimerState {
   const TimerState._();
 
   const factory TimerState.initial({
-    @Default(true) bool isStop,
-    @Default(true) bool isReseted,
+    @Default(true) bool isTimerStopped,
+    @Default(true) bool isTimerReseted,
+    @Default(false) bool isTimersDurationUp,
     
-    @Default(Duration(minutes: 15)) Duration timerDuration,
+    @Default(Duration(minutes: 15)) Duration durationOfTimer,
     @Default(Duration.zero) Duration spentFocusedTime,
 
     @Default(15) int minuteOfNumberPicker,
@@ -16,5 +17,5 @@ class TimerState with _$TimerState {
     @Default(0) int secondOfNumberPicker,
   }) = _Initial;
 
-  bool get timerIsZero => timerDuration == Duration.zero;
+  bool get timerIsZero => durationOfTimer == Duration.zero;
 }
