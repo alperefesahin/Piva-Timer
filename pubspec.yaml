@@ -45,6 +45,7 @@ dependencies:
   flutter_native_splash: ^2.1.5
   cupertino_icons: ^1.0.2
   format: ^1.1.1
+  responsive_framework: ^0.1.7
 
 dev_dependencies:
   flutter_test:

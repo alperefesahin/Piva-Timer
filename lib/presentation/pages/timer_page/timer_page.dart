@@ -1,6 +1,3 @@
-import 'dart:developer';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
@@ -8,7 +5,7 @@ import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
 import 'package:piva/infrastructure/localization/piva_localization.dart';
 import 'package:piva/infrastructure/notification/notification_api.dart';
-import 'package:piva/presentation/widgets/timer_page_widgets/app_bar_widgets/timer_page_app_bar.dart';
+import 'package:piva/presentation/widgets/app_bar_widgets/timer_page_app_bar.dart';
 
 import 'package:piva/presentation/widgets/timer_page_widgets/timer_page_body.dart';
 import 'package:simple_timer/simple_timer.dart' as timer_widget;
@@ -56,14 +53,20 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
           } else if (!state.isTimerStopped) {
             final notificationDuration = (timerController!.duration! - state.spentFocusedTime).inMicroseconds;
             timerController!.start();
-            NotificationApi.zonedScheduleNotification(title: _localization.timeIsUpTitle, body: _localization.timeIsUpBody, microSeconds: notificationDuration);
+            NotificationApi.zonedScheduleNotification(
+              title: _localization.timeIsUpTitle,
+              body: _localization.timeIsUpBody,
+              microSeconds: notificationDuration,
+            );
           }
         },
         builder: (context, state) {
-          return PlatformScaffold(
-            appBar: timerPageAppBar(context),
-            backgroundColor: Colors.white,
-            body: TimerPageBody(state: state, timerController: timerController!),
+          return SafeArea(
+            child: PlatformScaffold(
+              appBar: timerPageAppBar(context),
+              backgroundColor: Colors.white,
+              body: TimerPageBody(state: state, timerController: timerController!),
+            ),
           );
         },
       ),

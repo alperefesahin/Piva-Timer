@@ -5,6 +5,7 @@ import 'package:piva/application/localization/localization_cubit.dart';
 import 'package:piva/infrastructure/localization/piva_localization_delegate.dart';
 import 'package:piva/infrastructure/notification/notification_navigator.dart';
 import 'package:piva/presentation/pages/timer_page/timer_page.dart';
+import 'package:piva/presentation/widgets/core_widgets/responsive_wrapper.dart';
 
 class AppWidget extends StatelessWidget {
   const AppWidget({Key? key}) : super(key: key);
@@ -20,16 +21,13 @@ class AppWidget extends StatelessWidget {
             PivaLocalizationsDelegate(),
             GlobalMaterialLocalizations.delegate,
             GlobalWidgetsLocalizations.delegate,
-            GlobalCupertinoLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate
           ],
-          supportedLocales: const [
-            Locale('en'),
-            Locale('tr'),
-          ],
+          supportedLocales: const [Locale('en'), Locale('tr')],
           debugShowCheckedModeBanner: false,
           title: 'Piva',
+          builder: (context, widget) => ResponsiveWrapperWidget(widget: widget!),
           home: const TimerPage(),
-          
         );
       },
     );

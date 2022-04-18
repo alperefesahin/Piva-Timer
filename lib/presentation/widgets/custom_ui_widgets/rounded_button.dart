@@ -22,6 +22,7 @@ class RoundedButton extends StatelessWidget {
       splashColor: Colors.transparent,
       onTap: onTap,
       child: Container(
+        constraints: const BoxConstraints(maxWidth: 150),
         width: width,
         height: height,
         decoration: BoxDecoration(

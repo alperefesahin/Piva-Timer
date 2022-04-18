@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:piva/application/timer/timer_cubit.dart';
-import 'package:piva/presentation/widgets/timer_page_widgets/custom_ui_widgets/rounded_button.dart';
+import 'package:piva/presentation/widgets/custom_ui_widgets/rounded_button.dart';
 
 class TimerPageButton extends StatelessWidget {
   const TimerPageButton({

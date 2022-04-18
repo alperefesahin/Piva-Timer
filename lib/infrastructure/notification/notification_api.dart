@@ -1,14 +1,11 @@
-import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
-import 'package:piva/infrastructure/notification/notification_navigator.dart';
-import 'package:piva/presentation/pages/timer_page/timer_page.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as time_zone;
 
 class NotificationApi {
-  static const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('random_img.jpg');
+  static const AndroidInitializationSettings initializationSettingsAndroid = AndroidInitializationSettings('timer.png');
 
   static final notifications = FlutterLocalNotificationsPlugin();
   static final onNotifications = BehaviorSubject<String?>();
@@ -28,8 +25,10 @@ class NotificationApi {
     const android = AndroidInitializationSettings("@mipmap/ic_launcher");
     const settings = InitializationSettings(android: android, iOS: iOS);
 
+    const String timerPagePayload = "TimerPagePayload";
+
     await notifications.initialize(settings, onSelectNotification: (String? payload) async {
-      onNotifications.add("TimerPagePayload");
+      onNotifications.add(timerPagePayload);
     });
 
     if (initScheduled) {

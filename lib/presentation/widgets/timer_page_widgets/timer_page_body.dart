@@ -21,18 +21,10 @@ class TimerPageBody extends StatelessWidget {
 
     return Column(
       children: [
-        SizedBox(
-          height: size.height / 18,
-        ),
-        TopSectionOfTheTimer(
-          state: state,
-          timerController: timerController,
-        ),
-        MiddleSectionOfTheTimer(
-          state: state,
-          timerController: timerController,
-        ),
-        BottomSectionOfTheTimer(state: state),
+        SizedBox(height: size.height / 18),
+        TopSectionOfTheTimer(state: state, timerController: timerController),
+        MiddleSectionOfTheTimer(state: state, timerController: timerController),
+        BottomSectionOfTheTimer(state: state)
       ],
     );
   }
