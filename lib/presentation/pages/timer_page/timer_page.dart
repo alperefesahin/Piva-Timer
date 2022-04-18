@@ -33,12 +33,9 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
     super.initState();
     timerController = timer_widget.TimerController(this);
     NotificationApi.init(initScheduled: true);
-    listenNotifications();
     FlutterNativeSplash.remove();
   }
 
-  void listenNotifications() => NotificationApi.onNotifications.listen(onClickedNotification);
-  void onClickedNotification(String? payload) => Navigator.of(context).push(MaterialPageRoute(builder: (context) => TimerPage(payload: payload)));
   @override
   Widget build(BuildContext context) {
     final _localization = PivaLocalizations.of(context);

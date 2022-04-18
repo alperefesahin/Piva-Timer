@@ -1,5 +1,8 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_native_timezone/flutter_native_timezone.dart';
+import 'package:piva/infrastructure/notification/notification_navigator.dart';
+import 'package:piva/presentation/pages/timer_page/timer_page.dart';
 import 'package:rxdart/rxdart.dart';
 import 'package:timezone/timezone.dart' as tz;
 import 'package:timezone/data/latest.dart' as time_zone;
@@ -25,8 +28,8 @@ class NotificationApi {
     const android = AndroidInitializationSettings("@mipmap/ic_launcher");
     const settings = InitializationSettings(android: android, iOS: iOS);
 
-    await notifications.initialize(settings, onSelectNotification: (payload) async {
-      onNotifications.add(payload);
+    await notifications.initialize(settings, onSelectNotification: (String? payload) async {
+      onNotifications.add("TimerPagePayload");
     });
 
     if (initScheduled) {

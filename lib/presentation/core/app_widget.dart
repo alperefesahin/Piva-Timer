@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:piva/application/localization/localization_cubit.dart';
 import 'package:piva/infrastructure/localization/piva_localization_delegate.dart';
+import 'package:piva/infrastructure/notification/notification_navigator.dart';
 import 'package:piva/presentation/pages/timer_page/timer_page.dart';
 
 class AppWidget extends StatelessWidget {
@@ -13,6 +14,7 @@ class AppWidget extends StatelessWidget {
     return BlocBuilder<LocalizationCubit, LocalizationState>(
       builder: (context, state) {
         return MaterialApp(
+          navigatorKey: navigatorKey,
           locale: state.appLanguage,
           localizationsDelegates: const [
             PivaLocalizationsDelegate(),
@@ -27,6 +29,7 @@ class AppWidget extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           title: 'Piva',
           home: const TimerPage(),
+          
         );
       },
     );
