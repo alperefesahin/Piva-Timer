@@ -2,10 +2,9 @@
 
 [![Codemagic build status](https://api.codemagic.io/apps/6252bf270f76ba1786d959b5/6252bf270f76ba1786d959b4/status_badge.svg)](https://codemagic.io/apps/6252bf270f76ba1786d959b5/6252bf270f76ba1786d959b4/latest_build)
 ### What you can do with Piva Timer?
-Let's think about you are student, or worker, it does not matter. It's common that almost every people when they work, they set time to evaluate their worked time. Piva supply this to you via Flutter.
-You just have to set time, and that's it. When the time is up, it will send notification to you, even foreground and background (locked phone, switching apps, etc.).
+Let's think about whether you are a student or a worker, it does not matter. It's common that almost every person when they work, set time to evaluate their work time. Piva supplies this to you via Flutter. You just have to set a time, and that's it. When the time is up, it will send notifications to you, even foreground and background (locked phone, switching apps, etc.).
 
-Also If you need to multiple language, you can easily implement it, via localization folder (right now app has 2 langauges, Turkish, and English).
+Also If you need multiple languages, you can easily implement them, via the localization folder (right now the app has 2 languages, Turkish, and English).
 
 Simple, but useful.
 
