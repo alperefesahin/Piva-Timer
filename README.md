@@ -1,12 +1,62 @@
 # Piva - Timer
-Documentation is coming soon...
 
 [![Codemagic build status](https://api.codemagic.io/apps/6252bf270f76ba1786d959b5/6252bf270f76ba1786d959b4/status_badge.svg)](https://codemagic.io/apps/6252bf270f76ba1786d959b5/6252bf270f76ba1786d959b4/latest_build)
-## New Feature: Localization
-![localization1](https://user-images.githubusercontent.com/67283777/163460344-61939ff6-9b94-4901-a925-2176705a108c.gif)
+### What you can do with Piva Timer?
+Let's think about you are student, or worker, it does not matter. It's common that almost every people when they work, they set time to evaluate their worked time. Piva supply this to you via Flutter.
+You just have to set time, and that's it. When the time is up, it will send notification to you, even foreground and background (locked phone, switching apps, etc.).
+
+Also If you need to multiple language, you can easily implement it, via localization folder (right now app has 2 langauges, Turkish, and English).
+
+Simple, but useful.
+
+### Medium Article
+Medium Article is coming soon...
+
+### Packages:
+• flutter_localizations
+  
+• flutter_bloc
+ 
+• freezed_annotation
+  
+• flutter_countdown_timer
+  
+•  simple_timer
+  
+• numberpicker
+ 
+• wave
+  
+• flutter_local_notifications
+  
+• rxdart
+  
+• timezone
+  
+• flutter_native_timezone
+  
+• flutter_platform_widgets
+  
+• flutter_native_splash
+  
+• cupertino_icons
+  
+• format
+  
+• responsive_framework
+
+### Some significant notes:
+-> Before implement the codes of Piva Timer, you need to be careful when you try to implement, since there are some packages which are do not support the Web Platform, or iOS platform (it depends on package). So you may need control some package documentations. 
+
+-> In the application section, you can use just cubits, since there are no any complicated bussines logic.
+
 
 ## Some Gifs From the App
-![splash_screen](https://user-images.githubusercontent.com/67283777/163138078-1cd38782-815b-46de-a792-ba01fcbda1e1.gif)
-![app](https://user-images.githubusercontent.com/67283777/163138084-95cbe201-e2c3-443e-a872-3fdba07d3681.gif)
-![app2](https://user-images.githubusercontent.com/67283777/163138087-81b705fd-aa20-435c-ab26-60c97f80a48b.gif)
-![error_screen](https://user-images.githubusercontent.com/67283777/163138090-b9817ddb-a858-428a-a25d-b5759faace4c.gif)
+### Piva Timer - Web
+![pivaWeb](https://user-images.githubusercontent.com/67283777/163950874-60e070c5-46f5-43fa-971e-6f32bac4f890.gif)
+
+### Piva Timer - Mobile
+![piva1](https://user-images.githubusercontent.com/67283777/163950886-20de7881-2b6a-416e-895d-73695403f39f.gif)
+![piva](https://user-images.githubusercontent.com/67283777/163950888-1c74b16e-ed44-4ae5-90aa-3936e4521f24.gif)
+![piva3](https://user-images.githubusercontent.com/67283777/163950891-59d8be07-9d8e-4a7f-8a92-ddc0cd925b52.gif)
+![piva4](https://user-images.githubusercontent.com/67283777/163950895-15370529-b0d6-4b0f-bef0-c77c33a7383e.gif)
