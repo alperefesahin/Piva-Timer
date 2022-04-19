@@ -11,8 +11,6 @@ class PivaLocalizations {
     return Localizations.of<PivaLocalizations>(context, PivaLocalizations)!;
   }
 
-  static List<String> languages() => localizedValues.keys.toList();
-
   Map<String, String> get localeValues => localizedValues[locale.languageCode]!;
 
   String get pivaTimer => localeValues['pivaTimer']!;
