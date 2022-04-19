@@ -9,7 +9,11 @@ Also If you need multiple languages, you can easily implement them, via the loca
 Simple, but useful.
 
 ### Medium Article
-Medium Article is coming soon...
+Part 1: https://medium.com/@sahinefe/flutter-timer-piva-localization-notification-managing-state-part-1-27dbe2c7df45
+
+Part 2: https://medium.com/@sahinefe/flutter-timer-piva-localization-notification-managing-state-part-2-36b1dc39f39d
+
+Part 3: https://medium.com/@sahinefe/flutter-timer-piva-localization-notification-managing-state-part-3-a42b03eb6ba1
 
 ### Packages:
 • flutter_localizations
