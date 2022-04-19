@@ -38,15 +38,15 @@ class TimerCubit extends Cubit<TimerState> {
   }
 
   void startTimer() {
-    emit(state.copyWith(isTimerStopped: false, isTimerReseted: false));
+    emit(state.copyWith(isTimerStopped: false, isTimerReset: false));
   }
 
   void stopTimer() {
-    emit(state.copyWith(isTimerStopped: true, isTimerReseted: false));
+    emit(state.copyWith(isTimerStopped: true, isTimerReset: false));
   }
 
   void resetTimer() {
-    emit(state.copyWith(isTimerReseted: true, isTimerStopped: true, isTimersDurationUp: false));
+    emit(state.copyWith(isTimerReset: true, isTimerStopped: true, isTimersDurationUp: false));
   }
 
   void updateSpentFocusedTimeInstantly(Duration duration) {

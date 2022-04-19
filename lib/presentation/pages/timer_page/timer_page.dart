@@ -43,7 +43,7 @@ class _TimerPageState extends State<TimerPage> with SingleTickerProviderStateMix
         listener: (context, state) {
           timerController!.duration = state.durationOfTimer;
 
-          if (state.isTimerReseted) {
+          if (state.isTimerReset) {
             timerController!.reset();
             NotificationApi.notifications.cancelAll();
           }

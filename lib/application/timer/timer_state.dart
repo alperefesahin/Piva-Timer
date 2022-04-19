@@ -6,7 +6,7 @@ class TimerState with _$TimerState {
 
   const factory TimerState.initial({
     @Default(true) bool isTimerStopped,
-    @Default(true) bool isTimerReseted,
+    @Default(true) bool isTimerReset,
     @Default(false) bool isTimersDurationUp,
     
     @Default(Duration(minutes: 15)) Duration durationOfTimer,
