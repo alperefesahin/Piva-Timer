@@ -59,3 +59,4 @@ Medium Article is coming soon...
 ![piva](https://user-images.githubusercontent.com/67283777/163950888-1c74b16e-ed44-4ae5-90aa-3936e4521f24.gif)
 ![piva3](https://user-images.githubusercontent.com/67283777/163950891-59d8be07-9d8e-4a7f-8a92-ddc0cd925b52.gif)
 ![piva4](https://user-images.githubusercontent.com/67283777/163950895-15370529-b0d6-4b0f-bef0-c77c33a7383e.gif)
+![piva_error](https://user-images.githubusercontent.com/67283777/164050937-155fb403-254b-4616-b5f7-c5ee977245d4.gif)
