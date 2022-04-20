@@ -22,7 +22,7 @@ class NotificationApi {
 
   static Future init({bool initScheduled = false}) async {
     const iOS = IOSInitializationSettings();
-    const android = AndroidInitializationSettings("@mipmap/ic_launcher");
+    const android = AndroidInitializationSettings("@drawable/ic_stat_timer");
     const settings = InitializationSettings(android: android, iOS: iOS);
 
     const String timerPagePayload = "TimerPagePayload";
