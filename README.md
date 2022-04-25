@@ -24,7 +24,7 @@ Part 3: https://medium.com/@sahinefe/flutter-timer-piva-localization-notificatio
   
 • flutter_countdown_timer
   
-•  simple_timer
+•  simple_timer (for the first 3 part of the Medium articles, it is not necessary for the last version of the app)
   
 • numberpicker
  
