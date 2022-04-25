@@ -10,7 +10,8 @@ const localizedValues = {
     "seconds": "Seconds",
     "pivaTimer": "Piva - Timer",
     "timeIsZero": "The time can not be zero!",
-    "workingTimeText": "You have been worked for{}{}{}..."
+    "workingTimeText": "It's time to concentrate!",
+    "workingTimeCompletedText": "Time is up!"
   },
   'tr': {
     'timeIsUpTitle': 'Zaman doldu!',
@@ -23,6 +24,7 @@ const localizedValues = {
     "seconds": "Saniye",
     "pivaTimer": "Piva - Zamanlayıcı",
     "timeIsZero": "Zaman sıfır olamaz!",
-    "workingTimeText": "{}{}{} boyunca çalıştın..."
+    "workingTimeText": "Konsantre olma zamanı!",
+    "workingTimeCompletedText": "Zaman doldu!"
   },
 };
