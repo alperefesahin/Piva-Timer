@@ -16,12 +16,6 @@ class TimerCubit extends Cubit<TimerState> {
   final Ticker _ticker;
   StreamSubscription<int>? _tickerSubscription;
 
-  @override
-  Future<void> close() {
-    _tickerSubscription!.cancel();
-    return super.close();
-  }
-
   void updateSecondOfNumberPicker(int seconds) {
     emit(state.copyWith(
         secondOfNumberPicker: seconds,
