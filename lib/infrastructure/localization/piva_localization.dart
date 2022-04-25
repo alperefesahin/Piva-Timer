@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:piva/infrastructure/localization/localized_values.dart';
-import 'package:format/format.dart';
 
 class PivaLocalizations {
   PivaLocalizations(this.locale);
@@ -31,7 +30,9 @@ class PivaLocalizations {
 
   String get seconds => localeValues['seconds']!;
 
-  String workingTimeText(String hours, String minutes, String seconds) => localeValues['workingTimeText']!.format(hours, minutes, seconds);
+  String get workingTimeText => localeValues['workingTimeText']!;
+
+  String get workingTimeCompletedText => localeValues['workingTimeCompletedText']!;
 
   String get timeIsZero => localeValues['timeIsZero']!;
 }

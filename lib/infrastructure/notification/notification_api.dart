@@ -43,13 +43,13 @@ class NotificationApi {
     required String? title,
     required String? body,
     String? payload,
-    required int microSeconds,
+    required int seconds,
   }) async =>
       await notifications.zonedSchedule(
         id,
         title,
         body,
-        tz.TZDateTime.now(tz.local).add(Duration(microseconds: microSeconds, milliseconds: 500)),
+        tz.TZDateTime.now(tz.local).add(Duration(seconds: seconds, milliseconds: 500)),
         await _notificationDetails(),
         androidAllowWhileIdle: true,
         uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,

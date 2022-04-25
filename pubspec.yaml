@@ -34,7 +34,6 @@ dependencies:
   flutter_bloc: ^8.0.1
   freezed_annotation: ^1.1.0
   flutter_countdown_timer: ^4.1.0
-  simple_timer: ^2.0.0
   numberpicker: ^2.1.1
   wave: ^0.2.0
   flutter_local_notifications: ^9.4.0
@@ -44,7 +43,6 @@ dependencies:
   flutter_platform_widgets: ^1.20.0
   flutter_native_splash: ^2.1.5
   cupertino_icons: ^1.0.2
-  format: ^1.1.1
   responsive_framework: ^0.1.7
 
 dev_dependencies:

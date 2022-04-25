@@ -17,49 +17,98 @@ class BottomSectionOfTheTimer extends StatelessWidget {
     const buttonPadding = EdgeInsets.only(top: 40);
 
     return Expanded(
-        child: Stack(
-      children: [
-        TimerPageBodyWaveAnimation(state: state),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            !state.isTimersDurationUp
-                ? state.isTimerStopped
-                    ? TimerPageButton(
-                        state: state,
-                        buttonText: _localization.start,
-                        buttonOnTap: () {
-                          if (!state.timerIsZero) {
-                            context.read<TimerCubit>().startTimer();
-                          } else {
-                            timerIsZeroError(context);
-                          }
-                        },
-                        width: defaultButtonWidth,
-                        height: defaultButtonHeight,
-                        padding: buttonPadding)
-                    : TimerPageButton(
-                        state: state,
-                        buttonText: _localization.stop,
-                        buttonOnTap: () {
-                          context.read<TimerCubit>().stopTimer();
-                        },
-                        width: defaultButtonWidth,
-                        height: defaultButtonHeight,
-                        padding: buttonPadding)
-                : Container(),
-            TimerPageButton(
-                state: state,
-                buttonText: _localization.reset,
-                buttonOnTap: () {
-                  context.read<TimerCubit>().resetTimer();
-                },
-                width: state.isTimersDurationUp ? defaultButtonWidth : MediaQuery.of(context).size.width / 5,
-                height: state.isTimersDurationUp ? defaultButtonHeight : MediaQuery.of(context).size.height / 12,
-                padding: const EdgeInsets.only(top: 40, left: 10)),
-          ],
-        )
-      ],
-    ));
+      child: Stack(
+        children: [
+          TimerPageBodyWaveAnimation(state: state),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              if (state.isTimerReset) ...[
+                TimerPageButton(
+                    state: state,
+                    buttonText: _localization.start,
+                    buttonOnTap: () {
+                      if (!state.timerIsZero) {
+                        context.read<TimerCubit>().startTimer(
+                              body: _localization.timeIsUpBody,
+                              title: _localization.timeIsUpTitle,
+                            );
+                      } else {
+                        timerIsZeroError(context);
+                      }
+                    },
+                    width: defaultButtonWidth,
+                    height: defaultButtonHeight,
+                    padding: buttonPadding),
+                TimerPageButton(
+                    state: state,
+                    buttonText: _localization.reset,
+                    buttonOnTap: () {
+                      context.read<TimerCubit>().resetTimer();
+                    },
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: MediaQuery.of(context).size.height / 12,
+                    padding: const EdgeInsets.only(top: 40, left: 10))
+              ],
+              if (state.isTimersDurationUp) ...[
+                TimerPageButton(
+                    state: state,
+                    buttonText: _localization.reset,
+                    buttonOnTap: () {
+                      context.read<TimerCubit>().resetTimer();
+                    },
+                    width: state.isTimersDurationUp ? defaultButtonWidth : MediaQuery.of(context).size.width / 5,
+                    height: state.isTimersDurationUp ? defaultButtonHeight : MediaQuery.of(context).size.height / 12,
+                    padding: const EdgeInsets.only(top: 40, left: 10))
+              ],
+              if (state.isTimerStopped) ...[
+                TimerPageButton(
+                    state: state,
+                    buttonText: _localization.start,
+                    buttonOnTap: () {
+                      context.read<TimerCubit>().resumeTimer(
+                            body: _localization.timeIsUpBody,
+                            title: _localization.timeIsUpTitle,
+                          );
+                    },
+                    width: defaultButtonWidth,
+                    height: defaultButtonHeight,
+                    padding: buttonPadding),
+                TimerPageButton(
+                    state: state,
+                    buttonText: _localization.reset,
+                    buttonOnTap: () {
+                      context.read<TimerCubit>().resetTimer();
+                    },
+                    width: MediaQuery.of(context).size.width / 5,
+                    height: MediaQuery.of(context).size.height / 12,
+                    padding: const EdgeInsets.only(top: 40, left: 10))
+              ],
+              if (state.isTimerResumed) ...[
+                TimerPageButton(
+                    state: state,
+                    buttonText: _localization.stop,
+                    buttonOnTap: () {
+                      context.read<TimerCubit>().stopTimer();
+                    },
+                    width: defaultButtonWidth,
+                    height: defaultButtonHeight,
+                    padding: buttonPadding),
+                TimerPageButton(
+                  state: state,
+                  buttonText: _localization.reset,
+                  buttonOnTap: () {
+                    context.read<TimerCubit>().resetTimer();
+                  },
+                  width: MediaQuery.of(context).size.width / 5,
+                  height: MediaQuery.of(context).size.height / 12,
+                  padding: const EdgeInsets.only(top: 40, left: 10),
+                )
+              ]
+            ],
+          )
+        ],
+      ),
+    );
   }
 }
